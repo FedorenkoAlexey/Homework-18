@@ -19,7 +19,7 @@ router.get("/get/:id", (req, res) => {
 //   console.log("result", result);
 // });
 
-router.delete("/del/:id", (req, res) => {
+router.get("/del/:id", (req, res) => {
   userService.deleteUser(req, res);
 });
 
@@ -27,7 +27,7 @@ router.delete("/del/:id", (req, res) => {
 //   Users.deleteOne({ _id: "5e6e3212b753af093c130bf7" }).exec();
 // });
 
-router.post("/add/:id", (req, res) => {
+router.get("/add/:id", (req, res) => {
   userService.addUser(req, res);
 });
 
@@ -40,7 +40,7 @@ router.post("/add/:id", (req, res) => {
 //     .catch((err: Error) => res.send(err));
 // });
 
-router.put("/put/:id", (req, res) => {
+router.get("/put/:id", (req, res) => {
   userService.updateUser(req, res);
 });
 
