@@ -4,6 +4,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import router from "./routes/userRoutes";
 const PORT: number = 5000;
 
 const app = express();
@@ -19,7 +20,8 @@ mongoose
   .catch((err: Error) => console.log(err));
 
 app.use(bodyParser.json());
-// app.use(users);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/users", router);
 
 app.get("/", (req: express.Request, res: express.Response) => {
   res.send("Welcome to Node API");
