@@ -1,10 +1,13 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const PORT = process.env.PORT || 5000;
+// const express = require("express");
+// const mongoose = require("mongoose");
+// const bodyParser = require("body-parser");
+import express from "express";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
+const PORT: number = 5000;
 
 const app = express();
-const users = require("./routes/userRoutes");
+// const users = require("./routes/userRoutes");
 // console.log(process.env.MONGODB_URI);
 
 mongoose
@@ -13,12 +16,12 @@ mongoose
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("MongoBD connected"))
-  .catch(err => console.log(err));
+  .catch((err: Error) => console.log(err));
 
 app.use(bodyParser.json());
-app.use(users);
+// app.use(users);
 
-app.get("/", (req, res) => {
+app.get("/", (req: express.Request, res: express.Response) => {
   res.send("Welcome to Node API");
 });
 
