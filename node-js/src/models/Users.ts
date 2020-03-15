@@ -9,6 +9,10 @@ const UsersSchema: Schema = new mongoose.Schema({
   age: {
     type: Number,
     require: true
+  },
+  isPassed: {
+    type: Boolean,
+    default: false
   }
 });
 

@@ -6,8 +6,10 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import router from "./routes/userRoutes";
 const PORT: number = 5000;
+const { MONGODB_URI } = process.env;
 
 const app = express();
+console.log("333", MONGODB_URI);
 // const users = require("./routes/userRoutes");
 // console.log(process.env.MONGODB_URI);
 
