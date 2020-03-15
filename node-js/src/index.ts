@@ -4,6 +4,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import cors from "cors";
 import router from "./routes/userRoutes";
 const PORT: number = 5000;
 const { MONGODB_URI } = process.env;
@@ -23,6 +24,7 @@ mongoose
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 app.use("/users", router);
 
 app.get("/", (req: express.Request, res: express.Response) => {
