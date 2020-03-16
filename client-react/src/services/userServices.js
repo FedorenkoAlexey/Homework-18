@@ -13,7 +13,7 @@ export default class userService {
   };
 
   updateUser = async data => {
-    console.log("SERV_PUT_DATA", data);
-    // let res = await axios.get(`${BASE_URL}/users/put/${id}`);
+    // console.log("SERV_PUT_DATA", data);
+    let res = await axios.put(`${BASE_URL}/users/${data._id}`, data);
   };
 }

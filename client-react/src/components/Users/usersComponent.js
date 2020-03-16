@@ -16,11 +16,6 @@ class UsersComponent extends Component {
     };
   }
   componentDidMount() {
-    // this.api.getAll().then(res =>
-    //   this.setState({
-    //     users: res
-    //   })
-    // );
     this.get();
   }
   get = () => {
@@ -45,6 +40,7 @@ class UsersComponent extends Component {
       ...this.state.transferData,
       _id: id,
       raiting: e.value,
+      isCancel: false,
       isReadOnly: true
     };
     let resState = this.setState({ transferData: newState });
@@ -53,7 +49,7 @@ class UsersComponent extends Component {
 
   updateUser = () => {
     const data = this.state.transferData;
-    this.api.updateUser(data);
+    this.api.updateUser(data).then(() => this.get());
   };
 
   render() {
@@ -68,11 +64,18 @@ class UsersComponent extends Component {
               <button onClick={() => this.delUser(user._id)}>Delete</button>
               <br></br>
               <Rating
-                value={user.raiting}
-                cancel={user.cancel}
+                value={
+                  user.raiting === null
+                    ? this.state[`tmpValue${user._id}`]
+                    : user.raiting
+                }
+                cancel={user.isCancel}
                 disabled={user.isReadOnly}
                 stars={10}
-                onChange={event => this.transferData(event, user._id)}
+                onChange={event => {
+                  this.transferData(event, user._id);
+                  this.setState({ [`tmpValue${user._id}`]: event.value });
+                }}
               />
               <button onClick={() => this.updateUser()}>Apply</button>
             </li>

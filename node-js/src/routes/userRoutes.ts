@@ -40,7 +40,7 @@ router.get("/add/:id", (req, res) => {
 //     .catch((err: Error) => res.send(err));
 // });
 
-router.get("/put/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   userService.updateUser(req, res);
 });
 

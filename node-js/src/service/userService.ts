@@ -45,11 +45,18 @@ class userService {
   };
 
   updateUser = async (req: express.Request, res: express.Response) => {
+    console.log("SERV_PUT_DATA", req.body);
     const id: string = req.params.id;
+    console.log("SERV_ID", id);
     try {
       await Users.updateOne(
         { _id: id },
-        { isPassed: req.body.isPassed }
+        {
+          raiting: req.body.raiting,
+          isCancel: req.body.isCancel,
+          isReadOnly: req.body.isReadOnly
+        }
+        // { isReadOnly: req.body.isReadOnly }
       ).exec();
       res.sendStatus(200);
     } catch (e) {
