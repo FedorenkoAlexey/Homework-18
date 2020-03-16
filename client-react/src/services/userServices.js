@@ -19,7 +19,7 @@ export default class userService {
   };
 
   createUser = async data => {
-    console.log("POST_DATA", data);
+    // console.log("POST_DATA", data);
     let res = await axios.post(`${BASE_URL}/users/add/${data.name}`, data);
     return res.data;
   };

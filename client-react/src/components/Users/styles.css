@@ -4,7 +4,7 @@
 }
 
 .user-list {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width: 500px;
 }
 .username {
@@ -21,7 +21,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid rgb(55, 0, 128);
+  margin: 10px 0;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 3px 5px rgba(0, 1, 6, 0.5),
+    0 0 1px 1px rgba(0, 1, 6, 0.2);
+  transition: 0.2s ease-in-out;
 }
 
 .raiting {
@@ -30,16 +33,12 @@
   justify-content: center;
 }
 
-.btn-del {
-  align-items: center;
-  text-align: center;
-  width: 150px;
-  font-weight: 600;
-  padding: 5px 20px;
-  margin-top: 5px;
+.div-btn {
+  margin: 10px 0;
 }
 
-.btn-apply {
-  margin-left: 10px;
-  width: 70px;
+.div-apply {
+  margin: -3px 0 0 10px;
+  /* padding: -20px -20px; */
+  width: 50px;
 }

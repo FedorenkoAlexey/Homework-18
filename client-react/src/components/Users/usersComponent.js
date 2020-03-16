@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Rating } from "primereact/rating";
+import { Button } from "primereact/button";
 import userService from "../../services/userServices";
 import FormComponent from "../Form/formComponent";
 
@@ -29,16 +30,12 @@ class UsersComponent extends Component {
       this.setState({
         users: res
       });
-      console.log(res);
     });
   };
 
   delUser = id => {
     console.log("Deleted: ", id);
-    this.api
-      .deleteUser(id)
-      .then(res => console.log("Deleted: ", res))
-      .then(() => this.get());
+    this.api.deleteUser(id).then(() => this.get());
   };
 
   transferData = (e, id) => {
@@ -64,6 +61,7 @@ class UsersComponent extends Component {
     return (
       <div className="wrapper">
         <div className="users">
+          <h1>You can rate knowledge the students</h1>
           <ul className="user-list">
             {users.map(user => (
               <li className="user-field" key={user.name + 2}>
@@ -85,20 +83,25 @@ class UsersComponent extends Component {
                       this.setState({ [`tmpValue${user._id}`]: event.value });
                     }}
                   />
-                  <button
-                    className="btn-apply"
-                    onClick={() => this.updateUser()}
-                  >
-                    Apply
-                  </button>
+                  {user.raiting === null ? (
+                    <div className="div-apply">
+                      <Button
+                        icon="pi pi-check"
+                        className="btn-apply"
+                        onClick={() => this.updateUser()}
+                      />
+                    </div>
+                  ) : (
+                    <span></span>
+                  )}
                 </div>
-                <div>
-                  <button
-                    className="btn-del"
+                <div className="div-btn">
+                  <Button
+                    label="Delete User"
+                    className="p-button-danger"
+                    icon="pi pi-times"
                     onClick={() => this.delUser(user._id)}
-                  >
-                    Delete User
-                  </button>
+                  />
                 </div>
               </li>
             ))}

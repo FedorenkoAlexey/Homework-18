@@ -1,14 +1,13 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import UsersComponent from "./components/Users/usersComponent";
+import React from 'react'
+import './App.css'
+import UsersComponent from './components/Users/usersComponent'
 
-function App() {
+function App () {
   return (
-    <div className="App">
+    <div className='App'>
       <UsersComponent />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
