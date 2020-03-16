@@ -6,4 +6,14 @@ export default class userService {
     let res = await axios.get(`${BASE_URL}/users`);
     return res.data || [];
   };
+
+  deleteUser = async id => {
+    let res = await axios.get(`${BASE_URL}/users/del/${id}`);
+    return res.data;
+  };
+
+  updateUser = async data => {
+    console.log("SERV_PUT_DATA", data);
+    // let res = await axios.get(`${BASE_URL}/users/put/${id}`);
+  };
 }

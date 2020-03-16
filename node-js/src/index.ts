@@ -28,7 +28,7 @@ app.use(cors());
 app.use("/users", router);
 
 app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("Welcome to Node API");
+  res.send("Welcome to Node API.");
 });
 
 app.listen(PORT, () => {

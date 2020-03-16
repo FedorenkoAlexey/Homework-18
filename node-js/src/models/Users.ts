@@ -6,11 +6,19 @@ const UsersSchema: Schema = new mongoose.Schema({
     type: String,
     require: true
   },
-  age: {
-    type: Number,
+  email: {
+    type: String,
     require: true
   },
-  isPassed: {
+  raiting: {
+    type: Number,
+    default: null
+  },
+  isCancel: {
+    type: Boolean,
+    default: true
+  },
+  isReadOnly: {
     type: Boolean,
     default: false
   }
