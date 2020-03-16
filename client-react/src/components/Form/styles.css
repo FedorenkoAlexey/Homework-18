@@ -1,0 +1,20 @@
+.form {
+  width: 450px;
+  height: 600px;
+  border: crimson 2px dotted;
+}
+label {
+  margin-left: 120px;
+}
+
+.user-name {
+  margin-top: 30px;
+}
+
+.user-email {
+  margin-top: 30px;
+}
+
+.button {
+  margin: 30px 0 0 180px;
+}

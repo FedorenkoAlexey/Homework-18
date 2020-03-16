@@ -35,8 +35,7 @@ class userService {
     try {
       await Users.create({
         name: req.body.name,
-        age: req.body.age,
-        isPassed: false
+        email: req.body.email
       });
       res.sendStatus(201);
     } catch (e) {
@@ -45,9 +44,7 @@ class userService {
   };
 
   updateUser = async (req: express.Request, res: express.Response) => {
-    console.log("SERV_PUT_DATA", req.body);
     const id: string = req.params.id;
-    console.log("SERV_ID", id);
     try {
       await Users.updateOne(
         { _id: id },

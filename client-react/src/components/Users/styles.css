@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-list {
+  border: 1px solid green;
+  width: 500px;
+}
+.username {
+  color: blue;
+  font-weight: 600;
+  font-size: 25px;
+}
+.useremail {
+  color: rgb(0, 0, 77);
+  font-weight: 500;
+  font-size: 20px;
+}
+.user-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgb(55, 0, 128);
+}
+
+.raiting {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn-del {
+  align-items: center;
+  text-align: center;
+  width: 150px;
+  font-weight: 600;
+  padding: 5px 20px;
+  margin-top: 5px;
+}
+
+.btn-apply {
+  margin-left: 10px;
+  width: 70px;
+}
